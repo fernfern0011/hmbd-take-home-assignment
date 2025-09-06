@@ -1,6 +1,6 @@
 # hmbd-take-home-assignment
 
-First, run the following command for both backend and frontend
+First, run the following command for frontend
 ```bash
 npm install
 ```
