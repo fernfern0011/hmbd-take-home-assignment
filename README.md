@@ -1,12 +1,17 @@
 # hmbd-take-home-assignment
 
-First, run the backend server:
+First, run the following command for frontend
+```bash
+npm install
+```
+
+Next, run the backend server:
 
 ```bash
 python app.py
 ```
 
-Next, run the next.js server
+Then, run the next.js server
 
 ```bash
 npm run dev
