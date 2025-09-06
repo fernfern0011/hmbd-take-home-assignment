@@ -75,40 +75,6 @@ def filter_options():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-# @app.post("/api/summary")
-# def summary():
-#     try:
-#         if "file" in request.files:
-#             f = request.files["file"]
-#             df = pd.read_csv(f)
-#         elif request.is_json:
-#             data = request.get_json()
-#             if not isinstance(data, list):
-#                 return jsonify({"error": "JSON body must be an array of records"}), 400
-#             df = pd.DataFrame(data)
-#         else:
-#             return jsonify({"error": "Provide a CSV file under 'file' or a JSON array body"}), 400
-
-#         result = {
-#             "rows": int(len(df)),
-#             "columns": list(df.columns),
-#         }
-
-#         # If certain numeric columns exist, compute a couple of stats as examples
-#         numeric_cols = [
-#             c for c in df.columns if pd.api.types.is_numeric_dtype(df[c])]
-#         if numeric_cols:
-#             describe = df[numeric_cols].agg(["sum", "mean"]).to_dict()
-#             # Flatten the describe dict for a friendlier JSON shape
-#             for col, stats in describe.items():
-#                 for stat_name, value in stats.items():
-#                     result[f"{stat_name}_{col}"] = float(value)
-
-#         return jsonify(result)
-#     except Exception as e:
-#         return jsonify({"error": str(e)}), 500
-
-
 if __name__ == "__main__":
     # For local dev
     app.run(host="127.0.0.1", port=5000, debug=True)
